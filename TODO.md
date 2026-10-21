@@ -34,6 +34,8 @@ Use [S0/S1 acceptance](docs/acceptance/bootstrap_acceptance.md).
   without requiring WebKit for the initial window.
 - [ ] Inventory real CLI availability/version/capabilities and define the
   adapter/schema boundary. Separate protocol fixtures from live integration.
+  Record adopted inputs in `crt-cli: docs/compatibility.md`; SDK-only S0 does
+  not wait for D7 or claim approval of a runnable three-product combination.
 - [ ] Audit public input/focus/drawing/layout/IME capabilities; record actual
   producer gaps and high-risk feasibility cases instead of assuming gaps.
 - [ ] Define the minimal window/input/shutdown consumer, lifecycle/ownership,
@@ -65,6 +67,8 @@ without pretending that unfinished CLI workflows already work.
 
 - [ ] Present SDK/port/project operations through the compatible CLI/JSON
   contract, with exact locks/plans, diagnostics, progress, and cancellation.
+  Gate live build/run on implemented D5 commands and applicable D6 job contracts
+  ([feature prerequisites](docs/design/crt_studio.md#5-staged-goals)), not all of D7.
 - [ ] Verify parity with CLI outcomes, workspace trust, error recovery, and
   owned-process teardown; do not create a duplicate workflow engine.
 

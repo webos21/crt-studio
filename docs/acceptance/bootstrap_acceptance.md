@@ -25,6 +25,15 @@ GUI acceptance, and cross compilation is not execution. Missing public APIs
 or CLI contracts are recorded as prerequisite gaps, not implemented here as
 private includes or duplicate installers/engines.
 
+An SDK-only S0 result may be recorded before CLI D7; specify its accepted scope
+and keep S0-05 fixture evidence distinct from unavailable live integration.
+S3 build/run later requires the actual D5 workflow capabilities and applicable
+D6 job contracts listed in the [feature prerequisites](../design/crt_studio.md#5-staged-goals).
+D7 approves an exercised combination, not permission to start a window PoC.
+Link exact adopted contracts and original case evidence from
+`crt-cli: docs/compatibility.md`; do not infer compatibility from matching
+design baseline commits or proposed v1 names.
+
 ## S0 - External Consumer
 
 | ID | Required evidence |

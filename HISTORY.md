@@ -9,6 +9,26 @@ Link commits and reproduction entry points when available, without inventing
 commit IDs or test results. Older months may later move to `docs/history/`
 with decisions, evidence, limitations, and original Git references preserved.
 
+## 2026-10-21
+
+### Make CLI prerequisites feature-specific and track shared contract adoption
+
+Compared the supplied review with CRT `a23a173`, CLI `a76d8ad` and Studio
+`d3793e3`. Replaced the ambiguous all-D0-D6 prerequisite with feature-level
+conditions: SDK-only S0/UI PoCs and labeled fixtures may start early; live S3
+build/run requires actual D5 workflow capabilities and applicable D6 job
+contracts; D7 is formal approval of exercised combinations, not an S0 blocker.
+JSON drafts are not deferred until D6.
+
+Connected TODO, acceptance, index and agent guidance to the CLI-owned
+`docs/compatibility.md` adoption record and producer-owned review procedure.
+The original design baseline is unchanged; SDK/UI evidence, CLI evidence and
+Studio UX evidence remain with their owners. No Studio implementation, native
+GUI run, live CLI integration, automated CI check or release approval was
+performed; all runtime acceptance remains Not run.
+Documentation validation checks local links/anchors, English text, fences,
+conflict markers and whitespace; external URLs were not network-validated.
+
 ## 2026-10-20
 
 ### Initialize Studio guidance and documentation ownership

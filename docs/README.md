@@ -22,6 +22,12 @@ These are design references, not a claim that every described SDK/CLI feature
 is implemented or released. Coordinate later contract changes with their
 owning repositories rather than maintaining independent copies here.
 
+The CLI repository owns the shared adoption record at `docs/compatibility.md`.
+Use it for adopted SDK/host-tool/CLI versions and links to exercised combinations;
+Studio's [design](design/crt_studio.md#5-staged-goals) owns feature prerequisites
+and Studio acceptance owns native UX results. Design agreement is not runtime
+compatibility, and S0 does not wait for formal D7 approval.
+
 ## Development and Usage Guides
 
 - [Development and Bootstrap Guide](guides/development.md): initial SDK-only

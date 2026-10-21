@@ -133,13 +133,27 @@ UI-only configurations against `05-ui`.
 
 ## 5. Staged Goals
 
-Use stable consumer contracts from CLI stages D0-D6 as prerequisites.
-High-risk UI/IME/editor PoCs may proceed in parallel, but must not bypass
-SDK/CLI boundaries through private includes.
+Gate each feature on the capabilities it consumes, not on completion of all
+CLI D0-D6 or D7. SDK-only S0 and scoped UI/IME/editor PoCs can begin while the
+CLI is unavailable; label protocol fixtures explicitly and leave live CLI
+integration unaccepted. Public SDK/CLI boundaries still apply.
+
+| CLI readiness (future, not current completion) | Studio work allowed | Evidence boundary |
+| --- | --- | --- |
+| D0-D2 contracts/bootstrap/SDK selection | SDK-only S0/UI PoCs and protocol fixtures | Actual pinned SDK for UI; fixture results are not live CLI integration |
+| D3-D5 source-port/project commands as implemented | Limited live command experiments; S3 project build/run once D5 commands exist | Record exact command/schema capability subset and actual runs, not a stage-number assumption |
+| D6 applicable automation contracts | Structured result/job/cancellation/package integration | JSON drafts start in D0; D6 stabilizes them; each consumed behavior needs evidence |
+| D7 joint compatibility stabilization | Formal approval of exercised CLI/SDK/Studio combinations | Does not retroactively approve untested hosts/features or block starting S0 |
+
+The shared adoption record is `crt-cli: docs/compatibility.md` in the
+[CLI repository](https://github.com/webos21/crt-cli). It separates design
+provenance, adopted contract versions and actually exercised combinations.
+Studio owns the original UX/integration evidence; do not copy it into that
+record or treat it as a replacement for acceptance.
 
 | Studio stage | Scope | Acceptance goal |
 | --- | --- | --- |
-| S0 External consumer | Pinned SDK/CLI, minimal native window, input, shutdown | External build without CRT source/build trees; three OSes; no private APIs |
+| S0 External consumer | Pinned SDK; CLI if available, otherwise labeled fixtures; minimal native window/input/shutdown | External build without CRT source/build trees; three OSes; no private APIs; unavailable live CLI left unaccepted |
 | S1 Workbench | Explorer/editor/build placeholders, menus/settings/layout | UI model/toolkit lifecycle, focus/resize/High-DPI, IME PoC |
 | S2 Editor | Documents/editing/undo/save/recovery, syntax, LSP | Real files and Korean composition; crash recovery; editor surface |
 | S3 Build/run | CLI SDK/port/project UI, diagnostics, cancellation | Same locks/plans/results as CLI; no unnecessary SDK rebuilds |

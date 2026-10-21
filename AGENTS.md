@@ -36,6 +36,15 @@ Coordinate later producer/CLI contract changes explicitly. Do not maintain
 independently edited copies of SDK or CLI designs here. Adjacent checkouts may
 provide context, but they are not application build inputs.
 
+For shared owner/version/capability changes, use the CLI-owned adoption record
+`crt-cli: docs/compatibility.md` and its Shared-change Review section in the
+[CLI repository](https://github.com/webos21/crt-cli). Review immutable baseline
+references, proposed vs implemented commands, and TODO-to-acceptance links;
+coordinate producer-owned contracts before updating consumer locks. Keep the
+original design provenance separate from actually tested combinations. D7
+formal approval does not block SDK-only S0; live features require their actual
+command/schema capabilities and original evidence.
+
 Inspect git status and applicable instructions before editing. Preserve user
 changes. During initial setup, do not invent existing sources, presets, test
 commands, executables, screenshots, or completed acceptance results. A design
